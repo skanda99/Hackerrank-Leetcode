@@ -1,3 +1,3 @@
 # Hackerrank
-Solutions to some Hackerrank problems.
-Hackerrank Profile: skanda_u
+Solutions to some Hackerrank problems. <br />
+Hackerrank Profile: skanda_u  <br />
