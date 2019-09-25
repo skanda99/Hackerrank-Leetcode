@@ -9,13 +9,14 @@ public:
         int i,j;
         for(i=0;i!=9;i++)
         {
-            unordered_set<char>S;
+            vector<bool>S(9,0);
             for(j=0;j!=9;j++)
             {
-                if(B[i][j] != '.' && S.find(B[i][j]) != S.end())
+                if(B[i][j] != '.' && S[B[i][j]-'1'])
                     return false;
 
-                S.insert(B[i][j]);
+                if(B[i][j] != '.')
+                    S[B[i][j]-'1'] = 1;
             }
         }
 
@@ -27,13 +28,14 @@ public:
         int i,j;
         for(j=0;j!=9;j++)
         {
-            unordered_set<char>S;
+            vector<bool>S(9,0);
             for(i=0;i!=9;i++)
             {
-                if(B[i][j] != '.' && S.find(B[i][j]) != S.end())
+                if(B[i][j] != '.' && S[B[i][j]-'1'])
                     return false;
 
-                S.insert(B[i][j]);
+                if(B[i][j] != '.')
+                    S[B[i][j]-'1'] = 1;
             }
         }
 
@@ -47,15 +49,16 @@ public:
         {
             for(l=0;l!=9;l+=3)
             {
-                unordered_set<char>S;
+                vector<bool>S(9,0);
                 for(i=k;i<k+3;i++)
                 {
                     for(j=l;j<l+3;j++)
                     {
-                        if(B[i][j] != '.' && S.find(B[i][j]) != S.end())
+                        if(B[i][j] != '.' && S[B[i][j]-'1'])
                             return false;
 
-                        S.insert(B[i][j]);
+                        if(B[i][j] != '.')
+                            S[B[i][j]-'1'] = 1;
                     }
                 }
             }
